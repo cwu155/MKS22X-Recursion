@@ -26,14 +26,21 @@ public class recursion{
       return guess;
     }
 
-    /*Recursively find the n'th fibonacci number in linear time
+    /*Recursively find the nth fibonacci number in linear time
      *fib(0) = 0; fib(1) = 1; fib(5) = 5
      *precondition: n is non-negative
      */
 
-    //public static int fib(int n){
-
-    //}
+    //Not linear yet
+    public static int fib(int n){
+      if (n < 1){
+        return 0;
+      } else if (n == 1 || n == 2){
+        return 1;
+      } else {
+        return fib(n-1) + fib(n-2);
+      }
+    }
 
 
     /*As Per classwork*/
@@ -42,10 +49,7 @@ public class recursion{
 
   //Testing.
   public static void main(String[] args) {
-    System.out.println(sqrt(100.0, 0.001));
-    System.out.println(sqrt(9, 0.001));
-    System.out.println(sqrt(1, 0.001));
-    System.out.println(sqrt(0, 0.001));
+    System.out.println(fib(5));
   }
 
 }
