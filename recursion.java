@@ -31,21 +31,25 @@ public class recursion{
      *precondition: n is non-negative
      */
 
-    //Not linear yet
     public static int fib(int n){
       if (n < 1){
         return 0;
       } else if (n == 1 || n == 2){
         return 1;
       } else {
-        return fib(n-1) + fib(n-2);
+        return currentFib(n-1, n-2);
       }
+    }
+
+    public static int currentFib(int first, int second){
+      return fib(first) + fib(second);
     }
 
 
     /*As Per classwork*/
     // public static ArrayList<Integer> makeAllSums(){
     // }
+
 
   //Testing.
   public static void main(String[] args) {
