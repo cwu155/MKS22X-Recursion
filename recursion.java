@@ -50,20 +50,20 @@ public class recursion{
     /*As Per classwork*/
      public static ArrayList<Integer> makeAllSums(int n){
        ArrayList<Integer> sums = new ArrayList<Integer>();
-       if (n > 1){
-         ms(n, 0, sums);
-       }
+       ms(n, 0, 0, sums);
        return sums;
      }
 
-     public static void ms(int target, int start, ArrayList<Integer> sums){
+     public static void ms(int target, int start, int sum, ArrayList<Integer> sums){
 
-       if (target == start){
-         sums.add(target);
-       } else {
-         ms(target, start + 1, sums);
-       }
-     }
+       if (start < target){
+          ms(target, start + 1, sum, sums); //This adds 0 to the sum.
+          ms(target, start + 1, sum + start + 1, sums);
+        } else {
+          sums.add(sum);
+        }
+      }
+
 
 
   //Testing.
