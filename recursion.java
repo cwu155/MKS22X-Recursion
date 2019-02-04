@@ -1,3 +1,4 @@
+import java.util.*;
 public class recursion{
 
     /*Recursively find the sqrt using Newton's approximation
@@ -47,13 +48,27 @@ public class recursion{
 
 
     /*As Per classwork*/
-    // public static ArrayList<Integer> makeAllSums(){
-    // }
+     public static ArrayList<Integer> makeAllSums(int n){
+       ArrayList<Integer> sums = new ArrayList<Integer>();
+       if (n > 1){
+         ms(n, 0, sums);
+       }
+       return sums;
+     }
+
+     public static void ms(int target, int start, ArrayList<Integer> sums){
+
+       if (target == start){
+         sums.add(target);
+       } else {
+         ms(target, start + 1, sums);
+       }
+     }
 
 
   //Testing.
   public static void main(String[] args) {
-    System.out.println(fib(5));
+    System.out.println(makeAllSums(3));
   }
 
 }
